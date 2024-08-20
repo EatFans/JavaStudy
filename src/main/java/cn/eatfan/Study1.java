@@ -140,7 +140,7 @@ class Teacher extends Person {
 
     /**
      * 子类Teacher独有的方法，这个方法在子类Teacher类型的对象进行调用，如果Teacher类作为父类，其他类继承类Teacher类，
-     * 那么这个类也会继承Teacher类的本sayHello()方法
+     * 那么这个类也会继承Teacher类的sayHello()方法
      */
     public void sayHello(){
         System.out.println("Hello from teacher.");
