@@ -94,17 +94,15 @@ public class Study8 {
             // 通过反射使用构造方法创建Bus类的实例，传入构造参数"Toyota"和2024
             Object bus = constructor.newInstance("Toyota", 2024);
 
-            // 获取Bus类中的字段（属性）model的Field对象
+            // 分别获取Bus类中的字段（属性）model、year的Field对象
             Field modelField = busClass.getDeclaredField("model");
-
-            // 获取Bus类中的字段（属性）year的Field对象
             Field yearField = busClass.getDeclaredField("year");
 
             // 设置字段可访问，即使它是private的
             modelField.setAccessible(true);
             yearField.setAccessible(true);
 
-            // 打印原始字段值，即未修改前的值
+            // 输出原始字段值，即未修改前的值
             System.out.println("原始 Model 的值: " + modelField.get(bus)); // 获取并打印bus对象的model字段的值
             System.out.println("原始 Year: 的值" + yearField.get(bus));    // 获取并打印bus对象的year字段的值
 
@@ -114,7 +112,7 @@ public class Study8 {
             // 使用反射修改bus对象的year字段的值为2023
             yearField.set(bus,2023);
 
-            // 打印修改后的字段值
+            // 输出修改后的字段值
             System.out.println("更新后 Model 的值: " + modelField.get(bus)); // 获取并打印修改后的model字段的值
             System.out.println("更新后 Year: 的值" + yearField.get(bus));    // 获取并打印修改后的year字段的值
 
@@ -125,7 +123,7 @@ public class Study8 {
             start.invoke(bus);
 
         } catch (Exception e) {
-            // 捕获所有可能的异常并打印错误信息
+            // 捕获所有可能的异常并打印输出错误信息
             System.out.println(e.getMessage());
         }
 
