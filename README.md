@@ -18,8 +18,8 @@
 - Study9 类：Java 注解
 - Study10 类：Java List、Set、Map
 - Study11 类：Java try-catch-finally 异常捕获与处理
-- （以下内容正在完善中。。。）
 - Study12 类：Java 自定义异常
+- （以下内容正在完善中。。。）
 - Study13 类：Java 线程创建与管理
 - Study14 类：Java 线程同步与锁机制
 - Study15 类：Java 并发包
