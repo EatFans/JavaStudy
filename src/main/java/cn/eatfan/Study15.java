@@ -2,6 +2,7 @@ package cn.eatfan;
 
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -428,10 +429,51 @@ public class Study15 {
                 data.read();
             }
         });
-
         writer.start();
         reader1.start();
         reader2.start();
+
+        System.out.println("============================");
+
+        /*
+            原子操作
+            java.util.concurrent.atomic包提供了一系列原子操作类，用于执行原子操作，避免竞态条件。
+         */
+        Counter5 counter5 = new Counter5();
+        // 创建多个线程同时访问共享资源 counter
+        Thread j1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter5.increment();
+            }
+        });
+        Thread j2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter5.increment();
+            }
+        });
+        j1.start();
+        j2.start();
+        try {
+            j1.join();
+            j2.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        // 输出计数器的最终值
+        System.out.println("Final count: " + counter5.getCount());
+    }
+}
+
+/**
+ * 定义一个Counter5类，用于测试原子操作
+ */
+class Counter5 {
+    private AtomicInteger count = new AtomicInteger(0); // 使用 AtomicInteger 保证计数器的原子性
+    public void increment() {
+        count.incrementAndGet(); // 以原子方式增加计数器的值
+    }
+    public int getCount() {
+        return count.get(); // 以原子方式获取计数器的值
     }
 }
 
