@@ -20,8 +20,8 @@
 - Study11 类：Java try-catch-finally 异常捕获与处理
 - Study12 类：Java 自定义异常
 - Study13 类：Java 线程创建与管理
-- （以下内容正在完善中。。。）
 - Study14 类：Java 线程同步与锁机制
+- （以下内容正在完善中。。。）
 - Study15 类：Java 并发包
 - Study16 类：Java 动态代理
 - Study17 类：Java 字节流与字符流
