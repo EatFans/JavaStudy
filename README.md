@@ -24,8 +24,8 @@
 - Study15 类：Java 并发包
 - Study16 类：Java 动态代理
 - Study17 类：Java 字节流与字符流
-- （以下内容正在完善中。。。）
 - Study18 类：Java NIO与NIO.2
+- （以下内容正在完善中。。。）
 - Study19 类：Java Socket编程
 - Study20 类：Java HTTP协议与Servlet
 - 
