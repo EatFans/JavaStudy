@@ -26,6 +26,4 @@
 - Study17 类：Java 字节流与字符流
 - Study18 类：Java NIO与NIO.2
 - Study19 类：Java Socket编程
-- （以下内容正在完善中。。。） 
-- Study20 类：Java HTTP协议与Servlet
-- 
+- （后续将会继续更新新的内容）
